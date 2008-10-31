@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="svgElem" width="100%" height="100%" version="1.1" viewBox="0 0 4000 3000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drag="http://www.codedread.com/dragsvg" onload="initializeDraggableElements(); enableDrag(document.getElementById('widget'));" onmouseup="mouseUp(evt)" onmousemove="mouseMove(evt)" >
+<script id="draggableLibrary" xlink:href="/javascripts/dragsvg.js" />
+<g id="square" drag:enable="true" transform="translate(200,-5)" >
+<path opacity="0.06" d="M28.999,56.004c-14.887,0-27.001-12.113-27.001-27.005c0-14.887,12.114-27.001,27.001-27.001
+	c14.892,0,27.005,12.114,27.005,27.001C56.004,43.891,43.891,56.004,28.999,56.004L28.999,56.004z"/>
+<path opacity="0.06" d="M29,55.003C14.663,55.003,2.999,43.338,2.999,29C2.999,14.663,14.663,2.999,29,2.999
+	c14.338,0,26.003,11.665,26.003,26.001C55.003,43.338,43.338,55.003,29,55.003L29,55.003z"/>
+<path opacity="0.06" d="M29,54.002C15.216,54.002,4,42.786,4,29C4,15.216,15.216,4,29,4c13.786,0,25.002,11.216,25.002,25
+	C54.002,42.786,42.786,54.002,29,54.002L29,54.002z"/>
+<path fill="#999999" d="M29,5c13.255,0,24,10.745,24,24S42.255,53,29,53S5,42.255,5,29S15.745,5,29,5z"/>
+<path fill="#FFFFFF" d="M28.999,48.999c-11.028,0-20-8.972-20-20s8.972-20,20-20s20,8.972,20,20S40.027,48.999,28.999,48.999
+	L28.999,48.999z"/>
+	</g>
+</svg>

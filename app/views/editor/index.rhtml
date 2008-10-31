@@ -1,0 +1,74 @@
+
+<style>
+    .Sevent {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+       
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+        z-index: 100;
+    }
+    .Eevent {
+        position: absolute;
+        top: 5px;
+        left: 25px;
+       
+        width: 75px;
+        height: 75px;
+        margin: 10px;
+        z-index: 100;
+    }
+    .drop {
+        background-color: #e9b96e;
+        border: 3px double #c17d11;
+        width: 150px;
+        margin: 10px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        opacity: 0.7;
+    }
+    
+    .droppable-active {
+        opacity: 1.0;
+    }
+    
+    .droppable-hover {
+        outline: 1px dotted black;
+    }
+</style>
+<script type="text/javascript">
+    function toggleDiv(divid){
+        if (document.getElementById(divid).style.display == 'none') {
+            document.getElementById(divid).style.display = 'block';
+        }
+        else {
+            document.getElementById(divid).style.display = 'none';
+        }
+    }
+</script>
+
+<br/>
+<div class="Sevent">
+    <object data="/svg/00_working-area/menu.svg" type="image/svg+xml" id="event-start_58x58_idle" width="4000" height="3000">
+    </object>
+	
+</div>
+<div class="Eevent">
+  
+	
+</div>
+ 
+<br/><br/><br/>
+<a href="javascript:;" onmousedown="toggleDiv('div_pool');">+</a>
+<%= link_to_remote("Swimlanes",:update=>"div_pool", :url => {:action => "pool"}) %>
+<br/>
+<div id="div_pool">
+<%=render(:partial=>"pool")%>
+</div>
+<a href="javascript:;" onmousedown="toggleDiv('div_new_pool');">+</a>
+<div id="div_new_pool">
+    <%= link_to_remote("New Pool",:update=>"div_new_pool", :url => {:action => "pool"}) %>
+</div>

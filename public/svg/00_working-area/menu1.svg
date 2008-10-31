@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:drag="http://www.codedread.com/dragsvg"
+    onload="initializeDraggableElements(); init();"
+    focusHighlight="none"
+    width="1024" height="720" id="root">
+  <!--
+   
+    A simple lolcat builder prototype.
+  
+    By Erik Dahlstrom, ed@opera.com, 2008.
+    (c) Opera Software ASA
+    
+    This work is licensed under the Creative Commons Attribution-Share Alike 3.0 license.
+    http://creativecommons.org/licenses/by-sa/3.0/
+    
+    Official site for the script (and further enhancements):
+      http://github.com/zui/svglolcats/tree/master
+   
+   -->
+  <style>
+    .text { font: 48px Impact; fill:white; stroke:black; stroke-width:2px; }
+    a { fill: blue; }
+   </style>
+   <script>
+    var lock = 0;
+    var editingelm = null;
+    var picker = null;
+    var mousedown = null;
+  </script>
+  <script id="draggableLibrary" xlink:href="dragsvg.js" />
+  <script xlink:href="colorpicker.js"/>
+  <script><![CDATA[
+    function onwheel(evt) {
+      var realtarget = evt.target;
+      var delta = 0;
+      
+      // workaround bug in safari
+      if(realtarget instanceof Text) {
+        realtarget = realtarget.parentNode;
+      }
+      
+      // mangle wheelDelta to get consistent crossbrowser results
+      if(evt.wheelDelta) {
+        delta = evt.wheelDelta / 120;
+      } else if(evt.detail) {
+        delta = -evt.detail / 3;
+      }
+      
+      // In Safari delta can be zero and we're not interested in that
+      if(delta) {
+        b = realtarget.getBBox();
+        
+        try {
+          tfm = realtarget.parentNode.transform.baseVal.getItem(1);
+          tfm.setRotate(tfm.angle+delta, b.x+b.width/2, b.y+b.height/2);
+        }
+        catch(e){
+        }
+      }
+    }
+    
+    function oncolor(color) {
+      // the following line doesn't work properly in firefox; it doesn't add a 'style' attribute, and it doesn't update correctly
+     // mousedown.target.style.fill = color;
+    
+     mousedown.target.style.setProperty("fill", color, null);
+    }
+    
+    function init()
+    {
+      var root = document.documentElement;
+      root.addEventListener("mousewheel", onwheel, false); // for opera and safari
+      window.addEventListener("DOMMouseScroll", onwheel, false); // for firefox
+      picker = new ColorPicker(20, 32, 10, oncolor, document);
+    }
+    
+    function startedit(e)
+    {
+     if(!document.implementation.hasFeature("http://www.w3.org/Graphics/SVG/feature/1.2/#EditableTextAttribute", null)){
+     alert("This browser doesn't claim to support editable text in svg. Try Opera 9.5 instead.");
+     return;
+     }
+    
+      editingelm = e;
+      disableDrag(e.parentNode);
+      e.style.cursor="text";
+      e.setAttribute('editable','simple');
+ 
+      if(document.documentElement.setFocus)
+        document.documentElement.setFocus(e);
+      else if(e.focus)
+        e.focus();
+        
+      e.selectSubString(0,e.getNumberOfChars());
+      e.addEventListener("DOMFocusOut", fn = function(){ stopedit(e); e.removeEventListener("DOMFocusOut", fn, false); }, false);
+    }
+    
+    function stopedit(e)
+    {
+      e.removeAttribute('editable');
+      e.style.cursor="move";
+      enableDrag(e.parentNode);
+      editingelm = null;
+    }
+    
+    function incFontSize(id)
+    {
+      e = document.getElementById(id);
+      if(e.getFloatTrait && e.setFloatTrait) {
+        e.setFloatTrait("font-size", e.getFloatTrait("font-size") + 4);
+      } else {
+       var fs = getComputedStyle(e, "").getPropertyValue("font-size");
+       fs = parseFloat(fs.substr(0, fs.indexOf("px")));
+       e.setAttributeNS(null, "font-size", fs+4);
+      }
+    }
+    
+    function decFontSize(id)
+    {
+      e = document.getElementById(id);
+      if(e.getFloatTrait && e.setFloatTrait) {
+        e.setFloatTrait("font-size", e.getFloatTrait("font-size") - 4)
+   } else {    
+       var fs = getComputedStyle(e, "").getPropertyValue("font-size");
+       fs = parseFloat(fs.substr(0, fs.indexOf("px")));
+       e.setAttributeNS(null, "font-size", fs-4);
+     }
+    }
+    
+    function isAncestorOf(n, n2)
+    {
+     if(!n2 || !n)
+     return false;
+    
+     var p = n2.parentNode;
+     while(p)
+     {
+       if(p == n)
+       return true;
+      
+       p = p.parentNode;
+      }
+      return false;
+    }
+    
+    function beginFunc(id,evt)
+    {
+     isIn = (evt.type == 'mouseover');
+    
+     // filter: only if the relatedtarget was outside the g element do we do something
+     if(isAncestorOf(evt.currentTarget, evt.relatedTarget)) {
+   return;
+   }
+  
+   if(!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Animation", 1.1)) {
+   a = document.getElementById(id);
+   if(a) {
+   a.parentNode.setAttributeNS(null, "opacity", isIn ? 1 : 0);
+   } else {
+   // workaround for odd firefox bug: can't find the 'a[123]' elements
+   switch(id)
+   {
+   case "a1":
+   a = "g11";
+   break;
+   case "a2":
+   a = "g21";
+   break;
+   case "a3":
+   a = "g31";
+   break;
+   }
+   a = document.getElementById(a);
+   a.setAttributeNS(null, "opacity", isIn ? 1 : 0);
+   }
+      } else {
+        a = document.getElementById(id);
+       if(a && a.parentNode.getPresentationTrait) {
+         a.setAttributeNS(null, "from", a.parentNode.getPresentationTrait("opacity"));
+         a.setAttributeNS(null, "to", isIn ? 1:0);
+         b = a.cloneNode(false);
+         a.parentNode.replaceChild(b, a);
+          b.beginElement();
+       }
+      }
+    }
+    
+  ]]></script>
+  <image width="1024" height="720" xlink:href="400926090_20c1e61f43_o.jpg" image-rendering="optimizeSpeed"/>
+  <text y="710" x="1024" text-anchor="end">Photo by <a xlink:href="http://flickr.com/photos/mikeygottawa/400926090/sizes/o/#cc_license">Mikey G Ottawa</a></text>
+  
+  <g class="text" id="g1" transform="translate(100 100) rotate(0)" drag:enable="true" onmouseover="beginFunc('a1',evt)" onmouseout="beginFunc('a1',evt)">
+    <rect id="r1" rx="10" x="-10" y="0" width="300" height="0" style="display:none;pointer-events:none;fill-opacity:0.5;fill:black"/>
+    <text id="a" focusable="true" xml:space="preserve">I iz playing</text>
+    <g cursor="default" opacity="0" id="g11">
+      <animate id="a1" attributeName="opacity" to="1" dur="1s" begin="indefinite" fill="freeze"/>
+      <rect id="r11" fill="none" y="5" pointer-events="fill" width="200" height="30" stroke="none"/>
+      <rect id="r12" rx="4" width="24" height="24" transform="translate(0,10)" fill="white" onclick="incFontSize('a')" focusHighlight="none"/>
+      <image id="i1" xlink:href="/images/larger.png" transform="translate(1,11)" image-rendering="optimizeQuality" width="22" height="22" pointer-events="none"/>
+      <rect id="r13" rx="4" width="24" height="24" transform="translate(28,-100)" fill="white" onclick="decFontSize('a')" focusHighlight="none"/>
+      <image id="i2" xlink:href="smaller.png" transform="translate(50,6)" width="22" height="22" pointer-events="none"/>
+      <rect id="r14" rx="4" width="24" height="24" transform="translate(56,10)" fill="white" onclick="startedit(document.getElementById('a'))" focusHighlight="none"/>
+      <image id="i3" xlink:href="edit-select-all.png" transform="translate(60,14)" width="16" height="16" pointer-events="none"/>
+    </g>
+  </g>
+  <g id="g2" class="text" transform="translate(100 200) rotate(0)" drag:enable="true" focusable="true" onmouseover="beginFunc('a2',evt)" onmouseout="beginFunc('a2',evt)">
+    <rect rx="10" x="-10" y="0" width="300" height="0" style="display:none;pointer-events:none;fill-opacity:0.5;fill:black"/>
+    <text id="b" focusable="true" xml:space="preserve">ur guitahz</text>
+    <g cursor="default" opacity="0" id="g21">
+      <animate id="a2" attributeName="opacity" to="1" dur="1s" begin="indefinite" fill="freeze"/>
+      <rect fill="none" y="5" pointer-events="fill" width="200" height="30" stroke="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(0,10)" fill="white" onclick="incFontSize('b')" focusHighlight="none"/>
+      <image xlink:href="larger.png" transform="translate(1,11)" image-rendering="optimizeQuality" width="22" height="22" pointer-events="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(28,10)" fill="white" onclick="decFontSize('b')" focusHighlight="none"/>
+      <image xlink:href="smaller.png" transform="translate(29,11)" width="22" height="22" pointer-events="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(56,10)" fill="white" onclick="startedit(document.getElementById('b'))" focusHighlight="none"/>
+      <image xlink:href="edit-select-all.png" transform="translate(60,14)" width="16" height="16" pointer-events="none"/>
+    </g>
+  </g>
+  <g id="g3" class="text" transform="translate(100 300) rotate(0)" drag:enable="true" focusable="true" onmouseover="beginFunc('a3',evt)" onmouseout="beginFunc('a3',evt)">
+    <rect rx="10" x="-10" y="0" width="300" height="0" style="display:none;pointer-events:none;fill-opacity:0.5;fill:black"/>
+    <text id="c" focusable="true" xml:space="preserve">meeeow</text>
+    <g cursor="default" opacity="0" id="g31">
+      <animate id="a3" attributeName="opacity" to="1" dur="1s" begin="indefinite" fill="freeze"/>
+      <rect fill="none" y="5" pointer-events="fill" width="200" height="30" stroke="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(0,10)" fill="white" onclick="incFontSize('c')" focusHighlight="none"/>
+      <image xlink:href="larger.png" transform="translate(1,11)" image-rendering="optimizeQuality" width="22" height="22" pointer-events="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(28,10)" fill="white" onclick="decFontSize('c')" focusHighlight="none"/>
+      <image xlink:href="smaller.png" transform="translate(29,11)" width="22" height="22" pointer-events="none"/>
+      <rect rx="4" width="24" height="24" transform="translate(56,10)" fill="white" onclick="startedit(document.getElementById('c'))" focusHighlight="none"/>
+      <image xlink:href="edit-select-all.png" transform="translate(60,14)" width="16" height="16" pointer-events="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-16"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg  xmlns="http://www.w3.org/2000/svg" xmlns:a3="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" a3:scriptImplementation="Adobe" width="750" height="550" viewBox="0 0 750 550" xml:space="preserve">
+
+  <script  type="text/ecmascript" xlink:href="drag.es" />
+  
+
+  <title>Sacré SVG - Doing that drag thang</title>
+
+  <defs>
+    <linearGradient id="backgroundGradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="100%">
+
+      <stop offset="0" style="stop-color: #58657f" />
+      <stop offset="1" style="stop-color: #dbdbdb" />
+    </linearGradient>
+    <filter id="dropShadow" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="BlurAlpha" />
+      <feOffset in="BlurAlpha" dx="1" dy="1" result="OffsetBlurAlpha" />
+      <feMerge>
+        <feMergeNode in="OffsetBlurAlpha" />
+        <feMergeNode in="SourceGraphic" />
+
+      </feMerge>
+    </filter>
+    <symbol id="square">
+      <rect width="4" height="4" />
+    </symbol>
+    <symbol id="plus" style="fill: none; stroke-width: 1px;" transform="translate(-0.5,-0.5)">
+      <rect x="0.5" y="0.5" width="8" height="8" style="stroke: #999999;" />
+      <line x1="4.5" y1="2" x2="4.5" y2="7" style="stroke: #000000;" />
+      <line x1="2" y1="4.5" x2="7" y2="4.5" style="stroke: #000000;" />
+
+    </symbol>
+  </defs>
+
+  <g id="background" onmousemove="drag()" onmouseup="endDrag()" style="pointer-events: none;">
+
+    <rect x="0.5" y="0.5" width="749" height="549" style="fill: url(#backgroundGradient); stroke-width: 1px; stroke: #000000; shape-rendering: optimizeSpeed;" />
+
+    <g style="fill: none; stroke: #000000; stroke-dasharray: 2;">
+      <path d="M86,425l27-14l62-14l10,21l-9,9l-88,26l-6.5-6.5L86,425z"/>
+      <path d="M441,46l92.351,76.351L540,146.176L501,158l-96-73V69L441,46z"/>
+
+      <path d="M512,326l39.176-13.824L555,330l42,67l-44,6l-34-56L512,326z"/>
+    </g>
+    <g style="filter: url(#dropShadow);">
+      <g>
+        <path style="fill: #73083c;" d="M88.671,444.946l61.296-17.327l-3.512-14.537l-54.651,14.452L88.671,444.946z"/>
+        <path style="fill: #36051b;" d="M110.626,437.753l66.063-18.598l-26.723,8.464l-61.296,17.327L110.626,437.753z"/>
+        <path style="fill: #83244e;" d="M113.865,418.455l-3.239,19.298l-21.955,7.193l3.133-17.412L113.865,418.455z"/>
+        <path style="fill: #73083c;" d="M110.626,437.753l66.063-18.598l-3.95-16.045l-58.874,15.345L110.626,437.753z"/>
+      </g>
+
+      <g>
+        <path style="fill: #900b4c;" d="M412.363,79.822l91.946,71.822l-5.988-14.062L416.244,72.48L412.363,79.822z"/>
+        <path style="fill: #490825;" d="M435.328,63.001l99.203,80.175l-30.222,8.469l-91.946-71.822L435.328,63.001z"/>
+        <path style="fill: #92134e;" d="M439.433,55.021l-4.104,7.979l-22.965,16.821l3.881-7.342L439.433,55.021z"/>
+        <path style="fill: #900b4c;" d="M435.328,63.001l99.203,80.175l-6.556-15.45l-88.543-72.704L435.328,63.001z"/>
+      </g>
+      <g>
+        <path style="fill: #a00c56;" d="M523.066,342.118l33.716,56.486l-7.905-17.656l-30.648-51.596L523.066,342.118z"/>
+        <path style="fill: #a51a5d;" d="M550.516,332.254l36.734,62.364l-30.468,3.986l-33.716-56.486L550.516,332.254z"/>
+
+        <path style="fill: #b33c72;" d="M545.176,318.175l5.34,14.079l-27.449,9.864l-4.838-12.766L545.176,318.175z"/>
+      </g>
+    </g>
+
+  </g>
+
+  <g id="target" transform="translate(80,70)" style="pointer-events: all">
+
+    <g id="frame" onmousedown="initDrag()">
+      <polygon  id="filtered" points="0,0  48,0  53,5  284,5  284,246  278,252  93,252  87,258  0,258"
+                style="opacity: 0.7; fill: #ffffff; stroke: #000000; filter: url(#dropShadow);" />
+
+      <g id="upperCubes" style="fill: #999999;" transform="translate(3,3)">
+        <use xlink:href="#square" />
+        <use xlink:href="#square" x="6" style="opacity: 0.85" />
+        <use xlink:href="#square" x="12" style="opacity: 0.7" />
+        <use xlink:href="#square" x="18" style="opacity: 0.55" />
+        <use xlink:href="#square" x="24" style="opacity: 0.4" />
+        <use xlink:href="#square" x="30" style="opacity: 0.25" />
+        <use xlink:href="#square" x="36" style="opacity: 0.1" />
+      </g>
+
+      <g id="lowerCubes" style="fill: #999999;" transform="translate(3,251)">
+        <use xlink:href="#square" style="opacity: 0.1" />
+        <use xlink:href="#square" x="6" style="opacity: 0.25" />
+        <use xlink:href="#square" x="12" style="opacity: 0.4" />
+        <use xlink:href="#square" x="18" style="opacity: 0.55" />
+        <use xlink:href="#square" x="24" style="opacity: 0.7" />
+        <use xlink:href="#square" x="30" style="opacity: 0.85" />
+        <use xlink:href="#square" x="36" />
+        <use xlink:href="#square" x="42" />
+
+        <use xlink:href="#square" x="48" style="opacity: 0.85" />
+        <use xlink:href="#square" x="54" style="opacity: 0.7" />
+        <use xlink:href="#square" x="60" style="opacity: 0.55" />
+        <use xlink:href="#square" x="66" style="opacity: 0.4" />
+        <use xlink:href="#square" x="72" style="opacity: 0.25" />
+        <use xlink:href="#square" x="78" style="opacity: 0.1" />
+      </g>
+    </g>
+
+    <g id="text">
+      <g transform="translate(19,56)">
+        <use xlink:href="#plus" />
+        <use xlink:href="#plus" y="25" />
+        <use xlink:href="#plus" y="50" />
+        <use xlink:href="#plus" y="75" />
+        <use xlink:href="#plus" y="100" />
+        <use xlink:href="#plus" y="125" />
+      </g>
+
+      <g transform="translate(9,0)">
+        <g style="fill: #666666; font-family: pixelFont; font-size: 16px;">
+          <text y="24">SVG DOM DOING THAT DRAG THANG</text>
+          <text y="234">THAT&apos;S ALL FOLKS - SACRE SVG!!!!</text>
+        </g>
+        <g style="stroke-width: 1px; stroke: #000000; shape-rendering: optimizeSpeed;" >
+          <line x1="0" y1="29" x2="264" y2="29" />
+
+          <line x1="0" y1="219" x2="264" y2="219" />
+        </g>
+      </g>
+      <g transform="translate(33,64)" style="fill: #666666; font-family: arial; font-size: 11px; text-rendering: optimizeLegibility">
+        <text>Apply style effects on starting the drag</text>
+        <text y="25">Register event handlers on the graphics object</text>
+        <text y="50">Store the original top left point in a variable</text>
+
+        <text y="75">Compute the distance to the mouse pointer</text>
+        <text y="100">Apply the new coordinates when moving</text>
+        <text y="125">Apply default style on finishing the drag</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- SVG pixel font -->
+  <defs>
+    <font id="pixelFont" horiz-adv-x="522">
+      <font-face font-family="pixelFont" units-per-em="1000" panose-1="0 0 4 0 0 0 0 0 0 0" ascent="750" descent="-250" alphabetic="0"/>
+      <missing-glyph horiz-adv-x="500" d="M63 0V750H438V0H63ZM125 63H375V688H125V63Z"/>
+      <glyph unicode=" " glyph-name="space" horiz-adv-x="375"/>
+      <glyph unicode="!" glyph-name="exclam" horiz-adv-x="250" d="M125 625H0V250H125V625ZM125 125H0V0H125V125Z"/>
+      <glyph unicode="&apos;" glyph-name="quotesingle" horiz-adv-x="250" d="M125 625H0V375H125V625Z"/>
+      <glyph unicode="-" glyph-name="hyphen" horiz-adv-x="500" d="M0 375V250H375V375H0Z"/>
+
+      <glyph unicode="0" glyph-name="zero" horiz-adv-x="625" d="M500 0V625H0V0H500ZM125 500H375V125H125V500Z"/>
+      <glyph unicode="1" glyph-name="one" horiz-adv-x="375" d="M125 0H250V625H0V500H125V0Z"/>
+      <glyph unicode="2" glyph-name="two" horiz-adv-x="625" d="M0 625V500H375V375H0V0H500V125H125V250H500V625H0Z"/>
+      <glyph unicode="3" glyph-name="three" horiz-adv-x="625" d="M500 0V625H0V500H375V375H0V250H375V125H0V0H500Z"/>
+      <glyph unicode="4" glyph-name="four" horiz-adv-x="625" d="M375 250H125V625H0V125H375V0H500V625H375V250Z"/>
+      <glyph unicode="5" glyph-name="five" horiz-adv-x="625" d="M500 500V625H0V250H375V125H0V0H500V375H125V500H500Z"/>
+      <glyph unicode="6" glyph-name="six" horiz-adv-x="625" d="M125 375V500H375V625H0V0H500V375H125ZM375 125H125V250H375V125Z"/>
+      <glyph unicode="7" glyph-name="seven" horiz-adv-x="625" d="M0 625V500H375V375H500V625H0ZM250 250H375V375H250V250ZM125 0H250V250H125V0Z"/>
+      <glyph unicode="8" glyph-name="eight" horiz-adv-x="625" d="M500 0V625H0V0H500ZM125 500H375V375H125V500ZM125 250H375V125H125V250Z"/>
+
+      <glyph unicode="9" glyph-name="nine" horiz-adv-x="625" d="M0 625V250H375V125H125V0H500V625H0ZM375 375H125V500H375V375Z"/>
+      <glyph unicode="A" glyph-name="A" horiz-adv-x="625" d="M0 625V0H125V250H375V0H500V625H0ZM375 375H125V500H375V375Z"/>
+      <glyph unicode="B" glyph-name="B" horiz-adv-x="625" d="M500 0V375H375V625H0V0H500ZM125 500H250V375H125V500ZM125 250H375V125H125V250Z"/>
+      <glyph unicode="C" glyph-name="C" horiz-adv-x="625" d="M0 625V0H500V125H125V500H500V625H0Z"/>
+      <glyph unicode="D" glyph-name="D" horiz-adv-x="625" d="M375 125H500V500H375V125ZM375 0V125H125V500H375V625H0V0H375Z"/>
+      <glyph unicode="E" glyph-name="E" horiz-adv-x="625" d="M500 0V125H125V250H500V375H125V500H500V625H0V0H500Z"/>
+      <glyph unicode="F" glyph-name="F" horiz-adv-x="625" d="M125 250H500V375H125V500H500V625H0V0H125V250Z"/>
+      <glyph unicode="G" glyph-name="G" horiz-adv-x="625" d="M0 625V0H500V375H250V250H375V125H125V500H500V625H0Z"/>
+      <glyph unicode="H" glyph-name="H" horiz-adv-x="625" d="M375 375H125V625H0V0H125V250H375V0H500V625H375V375Z"/>
+
+      <glyph unicode="I" glyph-name="I" horiz-adv-x="500" d="M375 0V125H250V500H375V625H0V500H125V125H0V0H375Z"/>
+      <glyph unicode="J" glyph-name="J" horiz-adv-x="625" d="M250 625V500H375V125H125V250H0V0H500V625H250Z"/>
+      <glyph unicode="K" glyph-name="K" horiz-adv-x="625" d="M500 625H375V375H500V625ZM125 250H375V375H125V625H0V0H125V250ZM375 0H500V250H375V0Z"/>
+      <glyph unicode="L" glyph-name="L" horiz-adv-x="625" d="M125 125V625H0V0H500V125H125Z"/>
+      <glyph unicode="M" glyph-name="M" horiz-adv-x="750" d="M0 625V0H125V500H250V0H375V500H500V0H625V625H0Z"/>
+      <glyph unicode="N" glyph-name="N" horiz-adv-x="625" d="M375 250V0H500V625H375V375H250V250H375ZM125 375H250V500H125V625H0V0H125V375Z"/>
+      <glyph unicode="O" glyph-name="O" horiz-adv-x="625" d="M500 0V625H0V0H500ZM125 500H375V125H125V500Z"/>
+      <glyph unicode="P" glyph-name="P" horiz-adv-x="625" d="M0 625V0H125V125H500V625H0ZM375 250H125V500H375V250Z"/>
+      <glyph unicode="Q" glyph-name="Q" horiz-adv-x="625" d="M0 625V0H500V625H0ZM375 250H250V125H125V500H375V250Z"/>
+
+      <glyph unicode="R" glyph-name="R" horiz-adv-x="625" d="M125 250H250V0H500V125H375V250H500V625H0V0H125V250ZM125 500H375V375H125V500Z"/>
+      <glyph unicode="S" glyph-name="S" horiz-adv-x="625" d="M0 625V250H375V125H0V0H500V375H125V500H500V625H0Z"/>
+      <glyph unicode="T" glyph-name="T" horiz-adv-x="500" d="M125 0H250V500H375V625H0V500H125V0Z"/>
+      <glyph unicode="U" glyph-name="U" horiz-adv-x="625" d="M375 125H125V625H0V0H500V625H375V125Z"/>
+      <glyph unicode="V" glyph-name="V" horiz-adv-x="625" d="M0 125H125V625H0V125ZM250 125H375V375H250V125ZM375 625V375H500V625H375ZM125 0H250V125H125V0Z"/>
+      <glyph unicode="W" glyph-name="W" horiz-adv-x="750" d="M500 125H375V625H250V125H125V625H0V0H625V625H500V125Z"/>
+      <glyph unicode="X" glyph-name="X" horiz-adv-x="625" d="M125 625H0V375H125V625ZM500 625H375V375H500V625ZM375 250V375H125V250H375ZM125 250H0V0H125V250ZM375 0H500V250H375V0Z"/>
+      <glyph unicode="Y" glyph-name="Y" horiz-adv-x="625" d="M375 375H125V625H0V250H375V125H0V0H500V625H375V375Z"/>
+      <glyph unicode="Z" glyph-name="Z" horiz-adv-x="625" d="M0 625V500H375V375H500V625H0ZM125 375V250H375V375H125ZM0 0H500V125H125V250H0V0Z"/>
+
+      <glyph unicode="a" glyph-name="a" horiz-adv-x="625" d="M125 375V250H375V125H125V250H0V0H500V375H125Z"/>
+      <glyph unicode="b" glyph-name="b" horiz-adv-x="625" d="M500 0V375H125V500H0V0H500ZM125 250H375V125H125V250Z"/>
+      <glyph unicode="c" glyph-name="c" horiz-adv-x="500" d="M375 0V125H125V250H375V375H0V0H375Z"/>
+      <glyph unicode="d" glyph-name="d" horiz-adv-x="625" d="M500 0V500H375V375H0V0H500ZM125 250H375V125H125V250Z"/>
+      <glyph unicode="e" glyph-name="e" horiz-adv-x="625" d="M0 375V125H125V250H250V125H125V0H500V125H375V250H500V375H0Z"/>
+      <glyph unicode="f" glyph-name="f" horiz-adv-x="625" d="M500 375V500H250V375H500ZM125 0H250V125H500V250H250V375H125V250H0V125H125V0Z"/>
+      <glyph unicode="g" glyph-name="g" horiz-adv-x="625" d="M0 375V0H250V-125H375V0H500V375H0ZM375 125H125V250H375V125Z"/>
+      <glyph unicode="h" glyph-name="h" horiz-adv-x="625" d="M125 375V500H0V0H125V250H375V0H500V375H125Z"/>
+      <glyph unicode="i" glyph-name="i" horiz-adv-x="250" d="M125 500H0V375H125V500ZM125 250H0V0H125V250Z"/>
+
+      <glyph unicode="j" glyph-name="j" horiz-adv-x="250" d="M125 500H0V375H125V500ZM125 250H0V-125H125V250Z"/>
+      <glyph unicode="k" glyph-name="k" horiz-adv-x="500" d="M375 375H250V250H375V375ZM125 125H250V250H125V500H0V0H125V125ZM375 0V125H250V0H375Z"/>
+      <glyph unicode="l" glyph-name="l" horiz-adv-x="250" d="M125 500H0V0H125V500Z"/>
+      <glyph unicode="m" glyph-name="m" horiz-adv-x="750" d="M125 250H250V0H375V250H500V0H625V375H0V0H125V250Z"/>
+      <glyph unicode="n" glyph-name="n" horiz-adv-x="625" d="M0 375V0H125V250H375V0H500V375H0Z"/>
+      <glyph unicode="o" glyph-name="o" horiz-adv-x="625" d="M500 375H0V0H500V375ZM125 125V250H375V125H125Z"/>
+      <glyph unicode="p" glyph-name="p" horiz-adv-x="625" d="M0 375V-125H125V0H500V375H0ZM375 125H125V250H375V125Z"/>
+      <glyph unicode="q" glyph-name="q" horiz-adv-x="625" d="M0 375V0H375V-125H500V375H0ZM375 125H125V250H375V125Z"/>
+      <glyph unicode="r" glyph-name="r" horiz-adv-x="500" d="M125 250H375V375H0V0H125V250Z"/>
+
+      <glyph unicode="s" glyph-name="s" horiz-adv-x="625" d="M0 375V250H125V125H0V0H500V125H250V250H500V375H0Z"/>
+      <glyph unicode="t" glyph-name="t" horiz-adv-x="375" d="M250 0V125H125V250H250V375H125V500H0V0H250Z"/>
+      <glyph unicode="u" glyph-name="u" horiz-adv-x="625" d="M375 125H125V375H0V0H500V375H375V125Z"/>
+      <glyph unicode="v" glyph-name="v" horiz-adv-x="625" d="M125 375H0V125H125V375ZM500 375H375V125H500V375ZM125 125V0H375V125H125Z"/>
+      <glyph unicode="w" glyph-name="w" horiz-adv-x="750" d="M500 125H375V375H250V125H125V375H0V0H625V375H500V125Z"/>
+      <glyph unicode="x" glyph-name="x" horiz-adv-x="500" d="M0 375V250H125V375H0ZM375 375H250V250H375V375ZM250 125V250H125V125H250ZM0 0H125V125H0V0ZM375 0V125H250V0H375Z"/>
+      <glyph unicode="y" glyph-name="y" horiz-adv-x="625" d="M375 125H125V375H0V0H375V-125H500V375H375V125Z"/>
+      <glyph unicode="z" glyph-name="z" horiz-adv-x="625" d="M0 375V250H250V125H0V0H500V125H375V250H500V375H0Z"/>
+    </font>
+
+  </defs>
+
+</svg>

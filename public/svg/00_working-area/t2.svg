@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="svgElem" width="100%" height="100%" version="1.1" viewBox="0 0 4000 3000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drag="http://www.codedread.com/dragsvg" onload="initializeDraggableElements(); enableDrag(document.getElementById('widget'));" onmouseup="mouseUp(evt)" onmousemove="mouseMove(evt)" >
+<script id="draggableLibrary" xlink:href="/javascripts/dragsvg.js" />
+
+   
+
+
+<g id="square" drag:enable="true" transform="translate(100,-5)" >
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="#999999" d="M29,5c13.255,0,24,10.745,24,24S42.255,53,29,53S5,42.255,5,29
+	S15.745,5,29,5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M29,50.999C16.869,50.999,7,41.13,7,29C7,16.869,16.869,7,29,7
+	c12.129,0,21.999,9.869,21.999,22C50.999,41.13,41.13,50.999,29,50.999L29,50.999z"/>
+</g>
+  </svg>  

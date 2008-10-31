@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="svgElem" width="100%" height="100%" version="1.1" viewBox="0 0 4000 3000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drag="http://www.codedread.com/dragsvg" onload="initializeDraggableElements(); enableDrag(document.getElementById('widget'));" onmouseup="mouseUp(evt)" onmousemove="mouseMove(evt)" >
+<script id="draggableLibrary" xlink:href="/javascripts/dragsvg.js" />
+<g id="square" drag:enable="true" transform="translate(100,-5)" >
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="#999999" d="M29,5c13.255,0,24,10.745,24,24S42.255,53,29,53S5,42.255,5,29
+	S15.745,5,29,5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M29,50.999C16.869,50.999,7,41.13,7,29C7,16.869,16.869,7,29,7
+	c12.129,0,21.999,9.869,21.999,22C50.999,41.13,41.13,50.999,29,50.999L29,50.999z"/>
+</g>
+<g id="cd_logo" drag:enable="true" transform="translate(200,-5)" >
+<path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd" d="M28.999,56.004c-14.887,0-27.001-12.114-27.001-27.005
+	c0-14.887,12.114-27.001,27.001-27.001c14.891,0,27.005,12.114,27.005,27.001C56.004,43.89,43.89,56.004,28.999,56.004
+	L28.999,56.004z"/>
+<path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd" d="M29,55.003C14.663,55.003,2.999,43.338,2.999,29
+	C2.999,14.663,14.663,2.999,29,2.999c14.338,0,26.003,11.665,26.003,26.001C55.003,43.338,43.338,55.003,29,55.003L29,55.003z"/>
+<path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd" d="M29,54.002C15.216,54.002,4,42.786,4,29C4,15.216,15.216,4,29,4
+	c13.786,0,25.002,11.216,25.002,25C54.002,42.786,42.786,54.002,29,54.002L29,54.002z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#999999" d="M29,5c13.255,0,24,10.745,24,24S42.255,53,29,53S5,42.255,5,29
+	S15.745,5,29,5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M29,50.999C16.869,50.999,7,41.13,7,29C7,16.869,16.869,7,29,7
+	c12.129,0,21.999,9.869,21.999,22C50.999,41.13,41.13,50.999,29,50.999L29,50.999z"/>
+	</g>
+
+
+</svg>

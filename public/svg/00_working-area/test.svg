@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+	"http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+<title>jQuery SVG Demo</title>
+<script type="text/javascript" src="jquery-1.2.6.js"></script>
+<script type="text/javascript" src="jquery.debug.js"></script>
+<script type="text/javascript" src="jquery.tabs.js"></script>
+<script type="text/javascript" src="jquery.svg.js"></script>
+<script type="text/javascript" src="jquery.svgfilter.js"></script>
+
+<script type="text/javascript" src="jquery.svggraph.js"></script>
+<script type="text/javascript" src="jquery.svganim.js"></script>
+<script type="text/javascript" src="jquery.chili-2.0.js"></script>
+<script type="text/javascript" src="svg.js"></script>
+<script type="text/javascript">
+var shapes = [];
+var values = [];
+var current = [];
+
+$(function() {
+	if (!$.browser.msie) {
+		$('a[href=#anim]').parent().addClass('tabSplit');
+	}
+	$('#svgintro').svg({onLoad: drawIntro});
+	$('#remove').toggle(function() {
+			$(this).text('Re-attach');
+			$('#svgintro').svg('destroy');
+		},
+		function() {
+			$(this).text('Remove');
+			$('#svgintro').svg({onLoad: drawIntro});
+	});
+	$('#svganim').svg({onLoad: drawAnim});
+	$('#animGo').click(function() {
+		var opt = $('#animShape').val();
+		$('#animBetween').text('between ' + values[opt][0] + ' and ' + values[opt][1]);
+		current[opt] = (current[opt] ? 1 - current[opt] : 1);
+		var parts = opt.split(':');
+		var params = {};
+		params['svg-' + parts[1]] = values[opt][current[opt]];
+		$(shapes[parts[0]]).animate(params, 2000);
+	});
+	$('#animCombo').toggle(function() {
+			$(shapes['rect']).animate({'svg-width': '30%', 'svg-stroke-width': 10,
+				'svg-transform': 'rotate(45 100 75) translate(20 40)'}, 2000);
+			$(shapes['circle']).animate({'svg-r': 100, 'svg-stroke': 'pink'}, 2000);
+		}, function() {
+			$(shapes['rect']).animate({'svg-width': '25%', 'svg-stroke-width': 3,
+				'svg-transform': 'rotate(0 100 75) translate(0 0)'}, 2000);
+			$(shapes['circle']).animate({'svg-r': 50, 'svg-stroke': 'red'}, 2000);
+	});
+	$('.svgdiv').svg();
+	initExamples();
+	setDrawOptions();
+	setGraphOptions();
+});
+</script>
+<script type="text/javascript" src="jquery.demo.js"></script> <!-- After SVG load -->
+<style type="text/css">
+@import "jquery.tabs.css";
+@import "jquery.svg.css";
+@import "jquery.demo.css";
+
+#tabs ul { width: 100%; }
+#tips ul { width: auto; }
+table { width: 100%; }
+pre { clear: none; }
+.svgdiv { width: 100%; height: 300px; border: 1px solid #3c6c57; }
+#svgintro { float: right; margin-right: 30px; width: 150px; height: 150px; border: 1px solid #3c6c57; }
+#svganim { width: 600px; height: 350px; }
+#svggraph { height: 500px; }
+.svgsample { float: left; width: 46%; margin: 1%; overflow: scroll; border: 1px solid #3c6c57; padding: 5px; }
+.drawOpt { float: left; width: 25%; }
+.row { clear: both; }
+</style>
+</head>
+<body>
+
+<h1>jQuery SVG Demo</h1>
+<p>A <a href="http://jquery.com">jQuery</a> <a href="http://jquery.com/plugins/project/svg">plugin</a>
+	that lets you interact wih an SVG canvas. If you find this plugin useful please
+	<a href="http://jquery.com/plugins/project/svg">vote for it</a> on the jQuery site.</p>
+<p>Download <a href="jquery.svg.package-1.2.1.zip">all the files</a> in one go - available 
+	under the <a href="http://dev.jquery.com/browser/trunk/jquery/GPL-LICENSE.txt">GPL</a> and
+	<a href="http://dev.jquery.com/browser/trunk/jquery/MIT-LICENSE.txt">MIT</a> licences.
+	The current version is 1.2.1. For more detail see the
+	<a href="svgRef.html">documentation reference</a> page.
+	Or see a <a href="svgBasics.html">minimal page</a> that you could
+	use as a basis for your own investigations.</p>
+
+<div id="tabs">
+	<ul>
+		<li><a href="#intro"><span>Introduction</span></a></li>
+		<li><a href="#extend"><span>Extensions</span></a></li>
+		<li><a href="#examples"><span>Examples</span></a></li>
+		<li><a href="#load"><span>Load</span></a></li>
+		<li><a href="#anim"><span>Animations</span></a></li>
+
+		<li><a href="#sketch"><span>Sketchpad</span></a></li>
+		<li><a href="#graphs"><span>Graphing</span></a></li>
+		<li><a href="#compat"><span>Compatibility</span></a></li>
+		<li><a href="#tips"><span>Tips</span></a></li>
+	</ul>
+	<div id="intro" class="feature">
+		<h2>Introduction</h2>
+
+		<p>SVG (Scalable Vector Graphics) is a <q>modularized language 
+			for describing two-dimensional vector and mixed vector/raster 
+			graphics in XML</q>. It is a 
+			<a href="http://www.w3.org/TR/SVG11/">W3C Recommendation</a>
+			currently at version 1.1.</p>
+		<q>SVG is a language for describing two-dimensional graphics in XML. 
+			SVG allows for three types of graphic objects: vector graphic shapes 
+			(e.g., paths consisting of straight lines and curves), images and text. 
+			Graphical objects can be grouped, styled, transformed and composited 
+			into previously rendered objects. The feature set includes nested 
+			transformations, clipping paths, alpha masks, filter effects and template objects.</q>
+		<p>SVG is implemented in Firefox natively from version 1.5, Opera natively from version 8.5,
+			Safari natively from version 3.0, and in IE from Windows 98 onwards via the 
+			<a href="http://www.adobe.com/svg/viewer/install/main.html">Adobe SVG viewer</a> or the
+			<a href="http://www.examotion.com/index.php?id=product_player">Renesis Player</a>.
+			Not every SVG construct is supported by these implementations.</p>
+
+		<p>This plugin allows you to manipulate the SVG from JavaScript.
+			For more details see the <a href="svgRef.html">reference documentation</a>.</p>
+		<p>Download and include the jQuery SVG CSS and the 
+			jQuery SVG Javascript in the head section of your page.</p>
+		<pre><code class="html">&lt;style type="text/css"&gt;@import "jquery.svg.css";&lt;/style&gt;
+&lt;script type="text/javascript" src="jquery.svg.js"&gt;&lt;/script&gt;</code></pre>
+		<p>Alternatively, you can use the packed or minified versions of the code:
+			<code>jquery.svg.pack.js</code> (10.2K vs 45.3K) or
+			<code>jquery.svg.min.js</code> (13.2K, 4.1K when zipped).</p>
+
+		<p>Attach an SVG canvas to a <code>&lt;div&gt;</code> with the following:</p>
+		<pre><code class="js">$('div selector').svg();</code></pre>
+		<div id="svgintro"></div>
+		<p>Then retrieve the SVG instance and start working with it:</p>
+		<pre><code class="js">var svg = $('#svgintro').svg('get');
+svg.circle(130, 75, 50,
+	{fill: 'none', stroke: 'red', 'stroke-width': 3});
+var g = svg.group({stroke: 'black', 'stroke-width': 2});
+svg.line(g, 70, 75, 190, 75);
+svg.line(g, 130, 15, 130, 135);</code></pre>
+
+		<p>You can remove the SVG functionality if you no longer need it. <button id="remove">Remove</button></p>
+<pre><code class="js">$('#remove').toggle(function() {
+		$(this).text('Re-attach');
+		$('#svgintro').svg('destroy');
+	},
+	function() {
+		$(this).text('Remove');
+		$('#svgintro').svg({onLoad: drawIntro});
+});</code></pre>
+		<p>Processed divisions are marked with a class of <code>hasSVG</code>
+			and are not re-processed if targetted a second time.</p>
+	</div>
+	<div id="extend" class="feature">
+
+		<h2>Extension Plugins</h2>
+		<p>As well as the basic SVG functionality, the plugin allows for extending its abilities
+			via additional packages. Each extension adds an entry point object to the
+			SVG manager object returned from <code>$.svg</code>.
+			In this way you can avoid loading code that you are not going to use.</p>
+		<p>Currently the following extensions are available:</p>
+		<table border="0">
+			<tr><th>Package</th><th>Entry point</th><th>Functionality</th></tr>
+
+			<tr><td>jquery.svganim.js</td><td>-</td>
+				<td>Support for jQuery animation of SVG attributes.</td></tr>
+			<tr><td>jquery.svgfilter.js</td><td>svg.filter</td>
+				<td>Support for SVG <code>filter</code> element and filter definitions.</td></tr>
+
+			<tr><td>jquery.svggraph.js</td><td>svg.graph</td>
+				<td>Support for basic graphing using SVG.</td></tr>
+		</table>
+		<p>To use these extensions just load them after the main 
+			jQuery SVG Javascript in the head section of your page.</p>
+		<pre><code class="html">&lt;script type="text/javascript" src="jquery.svg.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="jquery.svggraph.js"&gt;&lt;/script&gt;</code></pre>
+
+		<p>Each extension registers itself with the SVG framework as shown,
+			indicating the name of its entry point and the class (function)
+			that encapsulates its functionality:</p>
+		<pre><code class="js">$.svg.addExtension('graph', SVGGraph);</code></pre>
+		<p>Attach an SVG canvas and retrieve the SVG instance as before. 
+			Then access the new functionality through its entry point:</p>
+		<pre><code class="js">$('div selector').svg();
+var svg = $('div selector').svg('get');
+svg.graph.addSeries('Firefox', [0.00, 4.06, 8.13, 9.95],
+	'lightgreen', 'green', 3);</code></pre>
+	</div>
+	<div id="examples" class="feature">
+		<h2>SVG Examples</h2>
+
+		<p>These examples are taken from the 
+			<a href="http://www.w3.org/TR/SVG11/">SVG 1.1 specification</a>
+			to show how they might be implemented using this package.</p>
+		<p><select id="example"><option></option></select></p>
+		<p id="exampledesc">Select one of the examples taken from the SVG specification
+			that demonstrates how the functionality might be produced using this package.
+			Both the original SVG document and the jQuery SVG code are shown below.</p>
+		<div style="clear: both;">&nbsp;</div>
+		<div id="svgexample" class="svgdiv"></div>
+		<div id="svgsource" class="svgsample">
+
+			<h3>SVG Source Document</h3>
+			<pre><code class="html"></code></pre>
+		</div>
+		<div id="svgcode" class="svgsample">
+			<h3>SVG jQuery Code</h3>
+			<pre><code class="js"></code></pre>
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+
+	</div>
+	<div id="load" class="feature">
+		<h2>SVG Load</h2>
+		<p>The SVG component may be updated with inline SVG elements, be cleared of all content,
+			or be loaded with external SVG documents. In the latter case, you may pass additional
+			settings to add to any existing content (<code>addTo: true</code>) or automatically
+			clear it first (<code>addTo: false</code> - the default).</p>
+		<p>You can also specify a callback function (<code>onLoad: loadDone</code>) to
+			be notified when the external document (loaded asynchronously) has completed.
+			The function receives the current SVG wrapper object as a parameter,
+			and an additional message parameter if there was an error.
+			The <code>this</code> object is the SVG container division.</p>
+
+		<div id="svgload" class="svgdiv"></div>
+		<p><button onclick="addInline();">Add inline fragment</button>
+			<button onclick="clearSVG();">Clear</button></p>
+		<pre><code class="js">svg.add($('#svginline'));
+svg.clear();</code></pre>
+		<svg:svg id="svginline">
+			<svg:g>
+				<svg:rect width="350" height="50" x="20" y="90" fill="blue"></svg:rect>
+
+				<svg:text x="40" y="120" fill="white" font-weight="bold">This came from an inline SVG fragment</svg:text>
+			</svg:g>
+		</svg:svg>
+		<pre><code class="html">&lt;svg:svg id="svginline"&gt;
+  &lt;svg:g&gt;
+    &lt;svg:rect width="350" height="50" x="20" y="90" fill="blue"&gt;&lt;/svg:rect&gt;
+
+    &lt;svg:text x="40" y="120" fill="white" font-weight="bold"&gt;
+      This came from an inline SVG fragment&lt;/svg:text&gt;
+  &lt;/svg:g&gt;
+&lt;/svg:svg&gt;</code></pre>
+		<p><input type="text" id="loadURL" size="40" value="lion.svg"/> 
+			<input type="checkbox" id="addTo" value="yes"/> <label for="addTo">Add to</label>
+
+			<button onclick="loadExternal();">Load</button></p>
+		<pre><code class="js">svg.load($('#loadURL').val(),
+	{addTo: $('#addTo')[0].checked, changeSize: false, onLoad: loadDone});
+
+// Callback after loading external document
+function loadDone(svg, error) {
+	svg.text(10, 20, error || 'Loaded into ' + this.id);
+}</code></pre>
+	</div>
+	<div id="anim" class="feature">
+		<h2>SVG Attribute Animations</h2>
+		<p>By adding the <code>jquery.svganim.js</code> extension
+			to your page you can easily animate several of the attributes of the
+			various SVG elements using the standard jQuery
+			<code><a href="http://docs.jquery.com/Effects/animate" target="_blank">animate</a></code> function.</p>
+
+		<p>All attributes must be prefixed by 'svg-' when passing them
+			to <code>animate</code> and, consequently, must also be quoted.
+			Many of the values may be expressed as exact pixels or as percentages.
+			You can also use the '+=' or '-=' prefixes for relative values.</p>
+		<pre><code class="js">var myrect = svg.rect(25, 25, 150, '25%', 10, 10,
+	{fill: 'none', stroke: 'blue', 'stroke-width': 3,
+	transform: 'rotate(0, 100, 75)'});
+$(myrect).animate({'svg-width': 200, 'svg-height': '30%',
+	'svg-stroke': 'aqua', 'svg-stroke-width': '+=7',
+	'svg-transform': 'rotate(60, 100, 75)'}, 2000);</code></pre>
+		<p>Animate
+			<select id="animShape">
+				<optgroup label="Rectangle">
+					<option value="rect:x" selected="selected">rectangle left</option>
+
+					<option value="rect:y">rectangle top</option>
+					<option value="rect:width">rectangle width</option>
+					<option value="rect:height">rectangle height</option>
+					<option value="rect:rx">rectangle rounding x</option>
+					<option value="rect:ry">rectangle rounding y</option>
+					<option value="rect:fill">rectangle fill colour</option>
+
+					<option value="rect:stroke">rectangle stroke colour</option>
+					<option value="rect:stroke-width">rectangle stroke width</option>
+					<option value="rect:transform">rectangle transform (rotate)</option>
+				</optgroup>
+				<optgroup label="Line">
+					<option value="line:x1">line start x</option>
+					<option value="line:y1">line start y</option>
+
+					<option value="line:x2">line end x</option>
+					<option value="line:y2">line end y</option>
+					<option value="line:stroke">line stroke colour</option>
+					<option value="line:stroke-width">line stroke width</option>
+					<option value="line:transform">line transform (scale)</option>
+				</optgroup>
+
+				<optgroup label="Circle">
+					<option value="circle:cx">circle centre x</option>
+					<option value="circle:cy">circle centre y</option>
+					<option value="circle:r">circle radius</option>
+					<option value="circle:fill">circle fill colour</option>
+					<option value="circle:stroke">circle stroke colour</option>
+
+					<option value="circle:stroke-width">circle stroke width</option>
+					<option value="circle:transform">circle transform (translate)</option>
+				</optgroup>
+				<optgroup label="Ellipse">
+					<option value="ellipse:cx">ellipse centre x</option>
+					<option value="ellipse:cy">ellipse centre y</option>
+					<option value="ellipse:rx">ellipse radius x</option>
+
+					<option value="ellipse:ry">ellipse radius y</option>
+					<option value="ellipse:fill">ellipse fill colour</option>
+					<option value="ellipse:stroke">ellipse stroke colour</option>
+					<option value="ellipse:stroke-width">ellipse stroke width</option>
+					<option value="ellipse:transform">ellipse transform (skewX/Y)</option>
+				</optgroup>
+
+				<optgroup label="Polyline">
+					<option value="polyline:stroke">polyline stroke colour</option>
+					<option value="polyline:stroke-width">polyline stroke width</option>
+					<option value="polyline:stroke-opacity">polyline stroke opacity</option>
+					<option value="polyline:transform">polyline transform (translate)</option>
+				</optgroup>
+				<optgroup label="Polygon">
+
+					<option value="polygon:opacity">polygon opacity</option>
+					<option value="polygon:fill">polygon fill colour</option>
+					<option value="polygon:fill-opacity">polygon fill opacity</option>
+					<option value="polygon:stroke">polygon stroke colour</option>
+					<option value="polygon:stroke-width">polygon stroke width</option>
+					<option value="polygon:transform">polygon transform (rotate)</option>
+
+				</optgroup>
+				<optgroup label="Group">
+					<option value="group:opacity">group opacity</option>
+					<option value="group:transform">group transform (scale)</option>
+				</optgroup>
+			</select> <button id="animGo">Go</button>
+			<span id="animBetween"></span>
+
+		</p>
+		<p>or a combination of effects <button id="animCombo">Go</button></p>
+		<div id="svganim" class="svgdiv"></div>
+		<p>The attributes that can be animated are summarised below. For more information
+			see the <a href="svgRef.html">documentation reference</a> animation page</p>
+		<table>
+			<tr><th>Attribute</th><th>Type</th><th>Elements</th></tr>
+
+			<tr><td>x</td><td>numeric</td>
+				<td>svg, rect, text</td></tr>
+			<tr><td>y</td><td>numeric</td>
+				<td>svg, rect, text</td></tr>
+			<tr><td>width</td><td>numeric</td>
+
+				<td>svg, rect</td></tr>
+			<tr><td>height</td><td>numeric</td>
+				<td>svg, rect</td></tr>
+			<tr><td>cx</td><td>numeric</td>
+				<td>circle, ellipse</td></tr>
+
+			<tr><td>cy</td><td>numeric</td>
+				<td>circle, ellipse</td></tr>
+			<tr><td>r</td><td>numeric</td>
+				<td>circle</td></tr>
+			<tr><td>rx</td><td>numeric</td>
+
+				<td>rect, ellipse</td></tr>
+			<tr><td>ry</td><td>numeric</td>
+				<td>rect, ellipse</td></tr>
+			<tr><td>x1</td><td>numeric</td>
+				<td>line</td></tr>
+
+			<tr><td>y1</td><td>numeric</td>
+				<td>line</td></tr>
+			<tr><td>x2</td><td>numeric</td>
+				<td>line</td></tr>
+			<tr><td>y2</td><td>numeric</td>
+
+				<td>line</td></tr>
+			<tr><td>opacity</td><td>numeric 0.0-1.0</td>
+				<td>group, rect, circle, ellipse, line, polyline, polygon, path, text</td></tr>
+			<tr><td>font-size</td><td>numeric</td>
+				<td>group, text</td></tr>
+
+			<tr><td>fill</td><td>colour</td>
+				<td>group, rect, circle, ellipse, polygon, path, text</td></tr>
+			<tr><td>fill-opacity</td><td>numeric 0.0-1.0</td>
+				<td>group, rect, circle, ellipse, polygon, path, text</td></tr>
+			<tr><td>stroke</td><td>colour</td>
+
+				<td>group, rect, circle, ellipse, line, polyline, polygon, path, text</td></td></tr>
+			<tr><td>stroke-width</td><td>numeric</td>
+				<td>group, rect, circle, ellipse, line, polyline, polygon, path, text</td></tr>
+			<tr><td>stroke-opacity</td><td>numeric 0.0-1.0</td>
+				<td>group, rect, circle, ellipse, line, polyline, polygon, path, text</td></tr>
+
+			<tr><td>transform</td><td>string</td>
+				<td>group, rect, circle, ellipse, line, polyline, polygon, path, text</td></tr>
+		</table>
+	</div>
+	<div id="sketch" class="feature">
+		<h2>Sketchpad</h2>
+		<div id="svgsketch" class="svgdiv"></div>
+
+		<div>&nbsp;</div>
+		<div class="row">
+			<span class="drawOpt">Shape</span>
+			<span class="drawOpt"><select id="shape" onchange="setDrawOptions();"><option value="rect">Rectangle</option><option value="circle">Circle</option><option value="ellipse">Ellipse</option><option value="line">Line</option></select></span>
+		</div>
+		<div id="getRect">
+
+			<div class="row">
+				<span class="drawOpt">Left</span> <span class="drawOpt"><input type="text" id="left" value="100"/></span>
+				<span class="drawOpt">Top</span> <span class="drawOpt"><input type="text" id="top" value="100"/></span> 
+			</div>
+			<div class="row">
+				<span class="drawOpt">Width</span> <span class="drawOpt"><input type="text" id="width" value="200"/></span> 
+				<span class="drawOpt">Height</span> <span class="drawOpt"><input type="text" id="height" value="50"/></span>
+
+			</div>
+			<div class="row">
+				<span class="drawOpt">Round-x</span> <span class="drawOpt"><input type="text" id="roundX" value="0"/></span>
+				<span class="drawOpt">Round-y</span> <span class="drawOpt"><input type="text" id="roundY" value="0"/></span>
+		</div>
+		</div>
+		<div id="getCentre" class="row">
+
+			<span class="drawOpt">Centre-x</span> <span class="drawOpt"><input type="text" id="centreX" value="200"/></span> 
+			<span class="drawOpt">Centre-y</span> <span class="drawOpt"><input type="text" id="centreY" value="150"/></span>
+		</div>
+		<div id="getRadius" class="row">
+			<span class="drawOpt">Radius</span> <span class="drawOpt"><input type="text" id="radius" value="100"/></span>
+		</div>
+
+		<div id="getRadii" class="row">
+			<span class="drawOpt">Radius-x</span> <span class="drawOpt"><input type="text" id="radiusX" value="100"/> </span>
+			<span class="drawOpt">Radius-y</span> <span class="drawOpt"><input type="text" id="radiusY" value="50"/></span>
+		</div>
+		<div id="getLine">
+			<div class="row">
+
+				<span class="drawOpt">Start-x</span> <span class="drawOpt"><input type="text" id="startX" value="10"/></span>
+				<span class="drawOpt">Start-y</span> <span class="drawOpt"><input type="text" id="startY" value="10"/></span>
+			</div>
+			<div class="row">
+				<span class="drawOpt">End-x</span> <span class="drawOpt"><input type="text" id="endX" value="100"/></span>
+				<span class="drawOpt">End-y</span> <span class="drawOpt"><input type="text" id="endY" value="100"/></span>
+
+			</div>
+		</div>
+		<div id="getFill" class="row">
+			<span class="drawOpt">Rotate (0-360 degrees)</span> <span class="drawOpt"><input type="text" id="rotate" value=""/></span>
+			<span class="drawOpt">Fill</span> <span class="drawOpt"><select id="fill"><option value="red">Red</option><option value="yellow">Yellow</option><option value="green">Green</option><option value="blue">Blue</option><option value="white">White</option><option value="gray">Gray</option><option value="black">Black</option><option value="none">None</option></select></span>
+
+		</div>
+		<div class="row">
+			<span class="drawOpt">Stroke</span> <span class="drawOpt"><select id="stroke"><option value="red">Red</option><option value="yellow">Yellow</option><option value="green">Green</option><option value="blue">Blue</option><option value="white">White</option><option value="gray">Gray</option><option value="black">Black</option><option value="none">None</option></select></span>
+			<span class="drawOpt">Stroke width</span> <span class="drawOpt"><select id="swidth"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></span>
+
+		</div>
+		<div class="row">
+			<button onclick="draw();">Draw</button>
+			<button onclick="undo();">Undo</button>
+			<button onclick="erase('#svgsketch');">Clear</button>
+		</div>
+	</div>
+
+	<div id="graphs" class="feature">
+		<h2>Graphing</h2>
+		<p>Use the graphing extension to make it easier to create SVG graphs.</p>
+		<p>Add the jQuery SVG graphing extension in the head section of your page.</p>
+		<pre><code class="html">&lt;script type="text/javascript" src="jquery.svggraph.js"&gt;&lt;/script&gt;</code></pre>
+		<p>Then access the <a href="#graphcode">extra functionality</a> via the
+			<code>graph</code> object within the SVG root.</p>
+
+		<div id="svggraph" class="svgdiv" title="the graph"></div>
+		<p><select id="chartType"><option></option></select>
+			with <select id="legendPos"><option value="0">no</option><option value="1">left</option>
+				<option value="2">right</option><option value="3">top</option>
+				<option value="4">bottom</option></select> legend
+			and <select id="seriesFill"><option value="plain">plain</option>
+
+				<option value="grad">graduated</option></select> background
+			<button onclick="graphIt();">Graph it</button></p>
+		<p id="graphDesc"></p>
+		<p>Options:</p>
+		<ul id="graphOptions"><li>None</li></ul>
+		<p>This is the <a name="graphcode">code</a> behind the graphing.</p>
+
+		<pre><code class="js">var chartArea = [[0.1, 0.1, 0.95, 0.9], [0.2, 0.1, 0.95, 0.9],
+	[0.1, 0.1, 0.8, 0.9], [0.1, 0.25, 0.9, 0.9], [0.1, 0.1, 0.9, 0.8]];
+var legendArea = [[0.0, 0.0, 0.0, 0.0], [0.005, 0.1, 0.125, 0.5],
+	[0.875, 0.1, 0.995, 0.5], [0.2, 0.1, 0.8, 0.2], [0.2, 0.9, 0.8, 0.995]];
+var fills = [['lightblue', 'url(#fadeBlue)'], ['pink', 'url(#fadeRed)'],
+	['lightgreen', 'url(#fadeGreen)']];
+
+var defs = svg.defs();
+svg.linearGradient(defs, 'fadeBlue', [[0, 'lightblue'], [1, 'blue']]);
+svg.linearGradient(defs, 'fadeRed', [[0, 'pink'], [1, 'red']]);
+svg.linearGradient(defs, 'fadeGreen', [[0, 'lightgreen'], [1, 'green']]);
+svg.graph.noDraw().title('Browser Usage').
+	addSeries('IE', [95.97, 91.80, 88.16, 86.64], 'lightblue', 'blue', 3).
+	addSeries('Netscape', [3.39, 2.83, 1.61, 0.00], 'pink', 'red', 3).
+	addSeries('Firefox', [0.00, 4.06, 8.13, 9.95], 'lightgreen', 'green', 3).
+	chartFormat('lightyellow', 'gray').
+	gridlines({stroke: 'gray', 'stroke-dasharray': '2,2'}, 'gray').
+	status(setStatus);
+svg.graph.xAxis.title('Year').scale(0, 3).
+	ticks(1, 0).labels(['2002', '2004', '2005', '2006']);
+svg.graph.yAxis.title('Percentage').scale(-5, 105).ticks(10, 5);
+svg.graph.legend.settings({fill: 'lightgoldenrodyellow', stroke: 'gray'});
+svg.graph.legend.show(legendPos).area(legendArea[legendPos]);
+for (var i = 0; i &lt; 3; i++) {
+	svg.graph.series()[i].format((fills[i])[seriesFill]);
+}
+svg.graph.noDraw().chartArea(chartArea[legendPos]).
+	chartType(chartType, {explode: [2], explodeDist: 10}).redraw();
+	
+function setStatus(value) {
+	window.status = value;
+}</code></pre>
+	</div>
+	<div id="compat" class="feature">
+		<h2>Backwards Compatibility</h2>
+		<p>Several interface changes were made between v1.0.1 and v1.1.0 to bring
+			this plugin into line with the new UI interface standards.</p>
+		<p>To assist in the upgrade process, a compatibility module is available
+			that allows a v1.0.1 page to be run against the latest code.</p>
+
+		<p>Just add the following line to your page after the plugin load (and any extensions) to continue running:</p>
+		<pre><code class="html">&lt;script type="text/javascript" src="jquery.svg.compat-1.0.1.js"&gt;&lt;/script&gt;</code></pre>
+		<p>You'll also need to rename additional settings in calls if their name contains
+			an underscore (_). Remove any initial underscore and replace embedded ones
+			with a dash (-). Then you must quote the name. For example:</p>
+		<ul>
+			<li>Replace <code>{&hellip; <b>stroke_width</b>: &hellip;}</code> with
+				<code>{&hellip; <b>'stroke-width'</b>: &hellip;}</code></li>
+
+			<li>Replace <code>{&hellip; <b>font_size</b>: &hellip;}</code> with
+				<code>{&hellip; <b>'font-size'</b>: &hellip;}</code></li>
+			<li>Replace <code>{&hellip; <b>_class</b>: &hellip;}</code> with
+				<code>{&hellip; <b>'class'</b>: &hellip;}</code></li>
+
+		</ul>
+		<p>To complete the upgrade perform the following steps:</p>
+		<ul>
+			<li>Replace <code><b>svgManager</b>.&hellip;</code> with
+				<code><b>$.svg</b>.&hellip;</code></li>
+			<li>Replace <code>$(&hellip;).svg(<b>&hellip;</b>)</code> with
+				<code>$(&hellip;).svg(<b>{<i>name</i>: &hellip;}</b>)</code></li>
+
+			<li>Replace <code><b>svgManager.getSVGFor(&hellip;)</b></code> with
+				<code><b>$(&hellip;).svg('get')</b></code></li>
+			<li>Replace <code><b>svgGraphing</b>.&hellip;</code> with
+				<code><b>$.svg.graphing</b>.&hellip;</code></li>
+
+			<li>Replace <code>svg.<b>roundrect</b>(&hellip;)</code> with
+				<code>svg.<b>rect</b>(&hellip;)</code></li>
+		</ul>
+	</div>
+
+	<div id="tips" class="feature">
+		<h2>Tips and Tricks</h2>
+		<ul>
+		<li><p>Since SVG is XML, you can use the full power of jQuery on it as well.
+			Retrieve the SVG wrapper as usual, then work with respect to its root element.
+			For example, to change the line colour for all circles in a container:</p>
+		<pre><code class="js">var svg = $('#mycontainer').svg('get');
+$('circle', svg.root()).attr('stroke', 'red');</code></pre></li>
+		<li><p>However, don't use the <code>addClass</code> or <code>removeClass</code>
+
+				functions since for the SVG elements the <code>class</code> attribute
+				is not a simple string.</p></li>
+		<li><p>You can also access jQuery from JavaScript embedded within the SVG.
+			First, you need to break out of the SVG document back into
+			the containing page, and then use jQuery as usual.
+			For example, in response to a click event, change the
+			colour of all circles in the document:</p>
+		<pre><code class="js">var jQ = (window.parent ? window.parent.jQuery : window.jQuery);
+var svg = jQ(event.target).parents('svg');
+jQ('circle', svg).attr('fill', 'blue');</code></pre></li>
+		</ul>
+	</div>
+</div>
+
+<h2>Comments</h2>
+<p>Great work. Congratulations! I am excited to see your good work.<br/>
+	<span class="author">Felipe Sanches</span></p>
+<p>Thank you for your seemingly well-made and well thought out project.<br/>
+	<span class="author">Shane Steinert-Threlkeld</span></p>
+<p>Love the jquery svg extension you've written. Stunningly neat.<br/>
+	<span class="author">Murray</span></p>
+
+<p>Contact <a href="index.html">Keith Wood</a> at 
+	<a href="&#x6d;ailto:kbwood&#x40;virginbroadband.&#x63;om.au">kbwood&#x40;virginbroadband.&#x63;om.au</a> 
+	with comments or suggestions.</p>
+<h2>Change History</h2>
+<table border="0" id="history" width="100%">
+<tr><th>Version</th><th>Date</th><th>Changes</th></tr>
+
+<tr><td><a href="jquery.svg.package-1.2.1.zip">1.2.1</a></td><td>23&nbsp;Aug&nbsp;2008</td><td><ul>
+	<li>Parent may be omitted if null in all function calls</li>
+	<li>Fixed addition of script elements</li>
+	<li>Fixed addition of style elements in Opera</li>
+</ul></td></tr>
+<tr><td><a href="jquery.svg.package-1.2.0.zip">1.2.0</a></td><td>19&nbsp;Jul&nbsp;2008</td><td><ul>
+
+	<li>Internal changes for instance values</li>
+	<li>Renamed <code>SVGRoot</code> to <code>SVGWrapper</code></li>
+	<li>Added <i>initPath</i> setting for initial loading of SVG in IE</li>
+	<li>Added <i>root()</i> function to provide access to the SVG root element</li>
+
+	<li>Updated to work in Safari 3.1.1+</li>
+</ul></td></tr>
+<tr><td><a href="jquery.svg.package-1.1.1.zip">1.1.1</a></td><td>14&nbsp;Jun&nbsp;2008</td><td><ul>
+	<li>Fixed bug in load external document in IE</li>
+	<li>Enhanced <i>load</i> with <i>changeSize</i> and <i>onLoad</i> settings</li>
+
+	<li><i>add</i>, <i>load</i>, <i>remove</i>, and <i>clear</i> functions now return a reference to the SVG root object</li>
+</ul></td></tr>
+<tr><td><a href="jquery.svg.package-1.1.0.zip">1.1.0</a></td><td>7&nbsp;Jun&nbsp;2008</td><td><ul>
+
+	<li>Updated interface to conform to jQuery UI standards</li>
+	<li>Added 'destroy' command</li>
+	<li>Added optional rounding attributes to <code>rect</code> function and removed <code>roundrect</code> function</li>
+	<li>Changed handling of settings with '-' in SVG or reserved words in JavaScript</li>
+
+	<li>Corrected error in <i>other</i> function</li>
+	<li>Other minor bug fixes</li>
+	<li>Support for Renesis Player in IE</li>
+	<li>Added SVG attribute animations plugin</li>
+	<li>Added 1.0.1 compatibility plugin</li>
+
+</ul></td></tr>
+<tr><td><a href="jquery.svg.package-1.0.1.zip">1.0.1</a></td><td>5&nbsp;May&nbsp;2008</td><td><ul>
+	<li>Updated to work in FF 3</li>
+</ul></td></tr>
+<tr><td><a href="jquery.svg.package-1.0.0.zip">1.0.0</a></td><td>14&nbsp;Sep&nbsp;2007</td><td><ul>
+	<li>Initial release</li>
+
+</ul></td></tr>
+</table>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4715900-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

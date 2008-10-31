@@ -1,0 +1,67 @@
+<svg	xmlns="http://www.w3.org/2000/svg" width="100%" xmlns:xlink="http://www.w3.org/1999/xlink" >
+    <script><![CDATA[ var	xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" 
+  	Root=document.documentElement
+     standardize(Root)
+   
+    function standardize(R){
+   	var Attr={
+   		"onmouseup":"add(evt)",
+   		"onmousedown":"grab(evt)",
+  		"onmousemove":null,
+  		"onmouseover":"hilight(evt)",
+   		"onmouseout":"hilight(evt)"
+   	}
+   	assignAttr(R,Attr)
+    }
+    function hilight(evt){
+   	var T=evt.target
+   	if (T.nodeName=="rect") return
+    	if (evt.type=="mouseover") T.setAttributeNS(null,"stroke-opacity",1)
+  	else T.setAttributeNS(null,"stroke-opacity",.5)
+    }
+   function add(evt){
+   	if (evt.target.nodeName!="rect") return
+   	var C=document.createElementNS(xmlns,"circle") 
+   	var stroke=Color()
+ 	var rad=10+Math.random()*50
+    	var Attr={
+  		r:rad,
+    		cx:evt.clientX,
+  		cy:evt.clientY,
+  		"fill": Color(),
+    		"fill-opacity":.75,
+   		"stroke": stroke,
+    		"stroke-opacity":.5,
+    		"id":stroke,
+    		"stroke-width":10+Math.random()*(55-rad)
+   	}
+   	assignAttr(C,Attr)
+   	Root.appendChild(C)
+   }
+   function grab(evt){
+    	var O=evt.target
+  	if (evt.target.nodeName=="rect") return
+   	var Attr={
+  		"onmousemove":"slide(evt,'"+O.id+"')",
+    		"onmouseup":"standardize(Root)"
+   	}
+   	assignAttr(Root,Attr)
+   }
+    function slide(evt,id){
+    	var o=document.getElementById(id)
+   	var c=""; if (o.nodeName=="circle") c="c"
+   	o.setAttributeNS(null, c+"x", evt.clientX)
+   	o.setAttributeNS(null, c+"y", evt.clientY)
+   }
+    function assignAttr(O,A){
+   	for (i in A) O.setAttributeNS(null,i, A[i])
+    }
+    function Color(){
+   	return "rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")"
+    }
+    ]]>
+    </script>
+   <rect width="100%" height="100%" fill="red"/>
+   <text font-size="12pt" x="50" y="20" id="t1">Click something to move it</text>
+   <text font-size="12pt" x="80" y="40" id="t2">Click nothing to add something</text>
+   </svg>

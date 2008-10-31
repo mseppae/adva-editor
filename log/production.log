@@ -1,0 +1,750 @@
+
+
+Processing EditorController#index (for 121.245.54.82 at 2008-09-29 14:12:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.01000 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:12:30) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00385 (259 reqs/sec) | Rendering: 0.00153 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:12:34) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00332 (301 reqs/sec) | Rendering: 0.00132 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:12:40) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00337 (296 reqs/sec) | Rendering: 0.00134 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:12:44) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00350 (285 reqs/sec) | Rendering: 0.00143 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#pool (for 121.245.54.82 at 2008-09-29 14:12:52) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"pool", "controller"=>"editor"}
+Completed in 0.00338 (296 reqs/sec) | Rendering: 0.00131 (38%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/pool]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:13:11) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00385 (259 reqs/sec) | Rendering: 0.00155 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:13:16) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m6", "controller"=>"editor"}
+Completed in 0.00411 (243 reqs/sec) | Rendering: 0.00166 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m6]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:13:49) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00332 (300 reqs/sec) | Rendering: 0.00132 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:13:52) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00396 (252 reqs/sec) | Rendering: 0.00165 (41%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:13:57) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m7", "controller"=>"editor"}
+Completed in 0.00382 (261 reqs/sec) | Rendering: 0.00159 (41%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m7]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:14:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m7", "controller"=>"editor"}
+Completed in 0.00336 (297 reqs/sec) | Rendering: 0.00134 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m7]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:14:18) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m6", "controller"=>"editor"}
+Completed in 0.00345 (289 reqs/sec) | Rendering: 0.00136 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m6]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:14:22) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00367 (272 reqs/sec) | Rendering: 0.00148 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:14:27) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00399 (250 reqs/sec) | Rendering: 0.00152 (38%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:47:17) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00354 (282 reqs/sec) | Rendering: 0.00142 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 121.245.54.82 at 2008-09-29 14:47:21) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWI3ZjZmOTE4Yzk3NTJiMjAwN2ViYTk2OGE0
+MzQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--2feaaa96f89cae35a67beaea709f2a88f44b1cd6
+  Parameters: {"authenticity_token"=>"0887049a3d6e2fe01172695fd207ad92734e8e91", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00331 (301 reqs/sec) | Rendering: 0.00130 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#index (for 87.179.82.154 at 2008-09-29 15:14:41) [GET]
+  Session ID: 3af96ecde982af26555f364c52c2b6e5
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01147 (87 reqs/sec) | Rendering: 0.00959 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 87.179.82.154 at 2008-09-29 15:17:02) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjMyNTE0NmIwZGYzZTIwMjJjZWVkN2VhODI0ODEz
+OWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a9cfa6aa4d40179987b2400344f59b5ba297aa20
+  Parameters: {"authenticity_token"=>"c44136d4002c2360d6bf85646554712c85dd78ae", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00353 (283 reqs/sec) | Rendering: 0.00145 (41%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 87.179.82.154 at 2008-09-29 15:17:14) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjMyNTE0NmIwZGYzZTIwMjJjZWVkN2VhODI0ODEz
+OWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a9cfa6aa4d40179987b2400344f59b5ba297aa20
+  Parameters: {"authenticity_token"=>"c44136d4002c2360d6bf85646554712c85dd78ae", "action"=>"menu", "id"=>"m6", "controller"=>"editor"}
+Completed in 0.00332 (300 reqs/sec) | Rendering: 0.00131 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m6]
+
+
+Processing EditorController#menu (for 87.179.82.154 at 2008-09-29 15:17:16) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjMyNTE0NmIwZGYzZTIwMjJjZWVkN2VhODI0ODEz
+OWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a9cfa6aa4d40179987b2400344f59b5ba297aa20
+  Parameters: {"authenticity_token"=>"c44136d4002c2360d6bf85646554712c85dd78ae", "action"=>"menu", "id"=>"m6", "controller"=>"editor"}
+Completed in 0.00350 (285 reqs/sec) | Rendering: 0.00142 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m6]
+
+
+Processing EditorController#index (for 87.69.104.68 at 2008-09-29 15:23:00) [GET]
+  Session ID: df96100a17011986f9c094b6822718a5
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.02234 (44 reqs/sec) | Rendering: 0.02045 (91%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:27) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m1", "controller"=>"editor"}
+Completed in 0.00394 (253 reqs/sec) | Rendering: 0.00156 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m1]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:28) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m1", "controller"=>"editor"}
+Completed in 0.00345 (290 reqs/sec) | Rendering: 0.00137 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m1]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:29) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m1", "controller"=>"editor"}
+Completed in 0.00347 (287 reqs/sec) | Rendering: 0.00142 (41%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m1]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:30) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00349 (286 reqs/sec) | Rendering: 0.00140 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:31) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00340 (294 reqs/sec) | Rendering: 0.00134 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 87.69.104.68 at 2008-09-29 15:23:32) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"authenticity_token"=>"542e07a885e2de43870c4ee4d592f781328311e0", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00409 (244 reqs/sec) | Rendering: 0.00166 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#index (for 87.69.104.68 at 2008-09-29 15:24:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzgzODQ0MTExNWQ0YThkNGQ4ZmMxYWJhMTY3ODk0
+ODUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8ffe23f631e46c600369acb182df90df12119244
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01213 (82 reqs/sec) | Rendering: 0.01017 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 87.123.121.229 at 2008-09-29 15:51:50) [GET]
+  Session ID: e904fe31978cca09b285a7daaaa4cf6c
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01252 (79 reqs/sec) | Rendering: 0.01048 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 87.123.121.229 at 2008-09-29 15:52:34) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODYxY2FiOTYzYTc1OWI0MDNiMDFmNTcyYmNmODli
+YTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e15ff493d1032b0c6e260b74f386226e270d3ee8
+  Parameters: {"authenticity_token"=>"0e9c3875fc7663827fcb09a972c19daf2f821b3a", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00342 (292 reqs/sec) | Rendering: 0.00136 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 87.123.121.229 at 2008-09-29 15:52:36) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODYxY2FiOTYzYTc1OWI0MDNiMDFmNTcyYmNmODli
+YTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e15ff493d1032b0c6e260b74f386226e270d3ee8
+  Parameters: {"authenticity_token"=>"0e9c3875fc7663827fcb09a972c19daf2f821b3a", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00359 (278 reqs/sec) | Rendering: 0.00145 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#index (for 212.186.51.252 at 2008-09-30 01:10:41) [GET]
+  Session ID: 86b62743f14b134585476d8f1b75aeff
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01634 (61 reqs/sec) | Rendering: 0.01432 (87%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 121.245.58.182 at 2008-09-30 12:32:09) [GET]
+  Session ID: b7063c69e2b41aa73f6cced594cb3332
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.02126 (47 reqs/sec) | Rendering: 0.01905 (89%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 121.245.58.182 at 2008-09-30 12:33:47) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"authenticity_token"=>"8c409b7e7f7c23a8feec6f6c53368f25d2e8986d", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.01108 (90 reqs/sec) | Rendering: 0.00906 (81%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 121.245.58.182 at 2008-09-30 12:34:02) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"authenticity_token"=>"8c409b7e7f7c23a8feec6f6c53368f25d2e8986d", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00386 (259 reqs/sec) | Rendering: 0.00141 (36%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 121.245.58.182 at 2008-09-30 12:34:14) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"authenticity_token"=>"8c409b7e7f7c23a8feec6f6c53368f25d2e8986d", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00389 (256 reqs/sec) | Rendering: 0.00152 (38%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 121.245.58.182 at 2008-09-30 12:34:23) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"authenticity_token"=>"8c409b7e7f7c23a8feec6f6c53368f25d2e8986d", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00375 (266 reqs/sec) | Rendering: 0.00153 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#menu (for 121.245.58.182 at 2008-09-30 12:34:38) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"authenticity_token"=>"8c409b7e7f7c23a8feec6f6c53368f25d2e8986d", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00389 (257 reqs/sec) | Rendering: 0.00152 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#index (for 121.245.58.182 at 2008-09-30 16:42:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzlkODU1YzVmYjhjMzQwMjhkN2Q3MjNkYjczZGI0
+YWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--6a9a434a1a2e6a68747129c10c939a152aac20fd
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.06038 (16 reqs/sec) | Rendering: 0.05816 (96%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 83.236.211.50 at 2008-10-01 01:10:21) [GET]
+  Session ID: 27e0ed11d708e7e0abe4e45e0d9d9bf6
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.02360 (42 reqs/sec) | Rendering: 0.02141 (90%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:10:30) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.02403 (41 reqs/sec) | Rendering: 0.02175 (90%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:10:31) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00363 (275 reqs/sec) | Rendering: 0.00147 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:10:34) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00370 (270 reqs/sec) | Rendering: 0.00150 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:10:38) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m1", "controller"=>"editor"}
+Completed in 0.00340 (294 reqs/sec) | Rendering: 0.00137 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m1]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:12:13) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00340 (294 reqs/sec) | Rendering: 0.00132 (38%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:12:16) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00376 (266 reqs/sec) | Rendering: 0.00156 (41%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:50) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00360 (277 reqs/sec) | Rendering: 0.00146 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:52) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.00346 (288 reqs/sec) | Rendering: 0.00139 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:52) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00333 (300 reqs/sec) | Rendering: 0.00132 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:53) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m4", "controller"=>"editor"}
+Completed in 0.00343 (291 reqs/sec) | Rendering: 0.00139 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m4]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:55) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00333 (300 reqs/sec) | Rendering: 0.00134 (40%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:23:57) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00330 (303 reqs/sec) | Rendering: 0.00131 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-01 01:40:57) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlN2E0OWI3NGNiZmRjOTdjMGQzNjFjMTdkMzRhNDEx
+NTYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--1439654fb63c57d7a0a3007708c0b562058f6225
+  Parameters: {"authenticity_token"=>"4fb4b6a2d90ce9863d2290e5c2d7365a37179a76", "action"=>"menu", "id"=>"m2", "controller"=>"editor"}
+Completed in 0.00333 (300 reqs/sec) | Rendering: 0.00132 (39%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m2]
+
+
+Processing EditorController#index (for 83.236.211.50 at 2008-10-01 01:44:19) [GET]
+  Session ID: e722bff007b476c1a59bcb3cfe4cc810
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01159 (86 reqs/sec) | Rendering: 0.00970 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+/!\ FAILSAFE /!\  Wed Oct 01 01:44:38 -0600 2008
+  Status: 500 Internal Server Error
+  can't modify frozen string
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `gsub!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `clean_up_ajax_request_body!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:397:in `parse_formatted_request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/cgi_process.rb:80:in `request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:304:in `parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:22:in `request_method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:35:in `method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:431:in `extract_request_environment'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+/!\ FAILSAFE /!\  Wed Oct 01 01:44:41 -0600 2008
+  Status: 500 Internal Server Error
+  can't modify frozen string
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `gsub!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `clean_up_ajax_request_body!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:397:in `parse_formatted_request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/cgi_process.rb:80:in `request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:304:in `parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:22:in `request_method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:35:in `method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:431:in `extract_request_environment'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+
+
+Processing EditorController#index (for 83.236.211.50 at 2008-10-01 01:53:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGFlY2Y4MmQyNGUxMDE1ZGMxMjkzZDU2ODk3Zjgy
+N2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--3716b1a79524bc832d1a5321e3f6c515e64e9d55
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01254 (79 reqs/sec) | Rendering: 0.01041 (83%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 212.186.51.252 at 2008-10-01 02:42:34) [GET]
+  Session ID: e2d967b95ecf729b8dd384e2480f8083
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01298 (77 reqs/sec) | Rendering: 0.01108 (85%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+/!\ FAILSAFE /!\  Wed Oct 01 02:43:17 -0600 2008
+  Status: 500 Internal Server Error
+  can't modify frozen string
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `gsub!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `clean_up_ajax_request_body!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:397:in `parse_formatted_request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/cgi_process.rb:80:in `request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:304:in `parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:22:in `request_method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:35:in `method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:431:in `extract_request_environment'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+/!\ FAILSAFE /!\  Wed Oct 01 02:43:18 -0600 2008
+  Status: 500 Internal Server Error
+  can't modify frozen string
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `gsub!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `clean_up_ajax_request_body!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:397:in `parse_formatted_request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/cgi_process.rb:80:in `request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:304:in `parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:22:in `request_method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:35:in `method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:431:in `extract_request_environment'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+/!\ FAILSAFE /!\  Wed Oct 01 02:43:18 -0600 2008
+  Status: 500 Internal Server Error
+  can't modify frozen string
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `gsub!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:487:in `clean_up_ajax_request_body!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:397:in `parse_formatted_request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/cgi_process.rb:80:in `request_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:304:in `parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:22:in `request_method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/request.rb:35:in `method'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:431:in `extract_request_environment'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+
+
+Processing ApplicationController#index (for 121.245.52.136 at 2008-10-05 09:23:22) [GET]
+  Session ID: 88e4852b2587030daa5ad8359d0b8ef6
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "//images/m1.jpg" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+
+Rendering /home1/rkhackco/rails_apps/adva-cms/public/404.html (404 Not Found)
+
+
+Processing EditorController#index (for 121.245.52.136 at 2008-10-05 09:23:53) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--2ba91d3a9df0c8566aea9e05838b15d9b16eb435
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.02720 (36 reqs/sec) | Rendering: 0.02447 (89%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#pool (for 121.245.52.136 at 2008-10-05 09:24:55) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMzOGZmMzIzODllYjk5MjAxMzAxYjcyMjkxNzJi
+NzciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e5ecce4d08bd356e1020039564fe2773c5ce8e2a
+  Parameters: {"authenticity_token"=>"4501e7bc36c1f4ba62c1948de57790130c3f5f3e", "action"=>"pool", "controller"=>"editor"}
+Completed in 0.00328 (304 reqs/sec) | Rendering: 0.00123 (37%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/pool]
+
+
+Processing EditorController#index (for 121.245.52.136 at 2008-10-05 10:37:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMzOGZmMzIzODllYjk5MjAxMzAxYjcyMjkxNzJi
+NzciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e5ecce4d08bd356e1020039564fe2773c5ce8e2a
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.03269 (30 reqs/sec) | Rendering: 0.03062 (93%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#pool (for 121.245.52.136 at 2008-10-05 10:37:50) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMzOGZmMzIzODllYjk5MjAxMzAxYjcyMjkxNzJi
+NzciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e5ecce4d08bd356e1020039564fe2773c5ce8e2a
+  Parameters: {"authenticity_token"=>"4501e7bc36c1f4ba62c1948de57790130c3f5f3e", "action"=>"pool", "controller"=>"editor"}
+Completed in 0.00346 (289 reqs/sec) | Rendering: 0.00130 (37%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/pool]
+
+
+Processing EditorController#menu (for 121.245.52.136 at 2008-10-05 10:43:03) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMzOGZmMzIzODllYjk5MjAxMzAxYjcyMjkxNzJi
+NzciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e5ecce4d08bd356e1020039564fe2773c5ce8e2a
+  Parameters: {"authenticity_token"=>"4501e7bc36c1f4ba62c1948de57790130c3f5f3e", "action"=>"menu", "id"=>"m1", "controller"=>"editor"}
+Completed in 0.01689 (59 reqs/sec) | Rendering: 0.01339 (79%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m1]
+
+
+Processing EditorController#index (for 121.245.52.136 at 2008-10-05 10:51:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMzOGZmMzIzODllYjk5MjAxMzAxYjcyMjkxNzJi
+NzciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--e5ecce4d08bd356e1020039564fe2773c5ce8e2a
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01284 (77 reqs/sec) | Rendering: 0.01053 (82%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 83.236.211.50 at 2008-10-08 04:45:34) [GET]
+  Session ID: e473a140ecfd2f98a0d22884156d99a7
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01955 (51 reqs/sec) | Rendering: 0.01751 (89%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-08 04:46:01) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYzc4ZDgzMTI0NmVlMjJhZmYwZmE5ZDJmYWE4NmI3
+MzgiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--4d84d6fc1068e5760660eaa386a1779ba11f9ce6
+  Parameters: {"authenticity_token"=>"0f1e20aa1bbfe6dfc31db0173426679031fa9c45", "action"=>"menu", "id"=>"m3", "controller"=>"editor"}
+Completed in 0.08546 (11 reqs/sec) | Rendering: 0.08341 (97%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m3]
+
+
+Processing EditorController#menu (for 83.236.211.50 at 2008-10-08 04:46:04) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYzc4ZDgzMTI0NmVlMjJhZmYwZmE5ZDJmYWE4NmI3
+MzgiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--4d84d6fc1068e5760660eaa386a1779ba11f9ce6
+  Parameters: {"authenticity_token"=>"0f1e20aa1bbfe6dfc31db0173426679031fa9c45", "action"=>"menu", "id"=>"m5", "controller"=>"editor"}
+Completed in 0.00420 (237 reqs/sec) | Rendering: 0.00182 (43%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor/menu/m5]
+
+
+Processing EditorController#index (for 121.245.48.18 at 2008-10-12 11:59:21) [GET]
+  Session ID: 444f2676ed858a172aba927fd09b92b1
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.02254 (44 reqs/sec) | Rendering: 0.02027 (89%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 160.83.73.8 at 2008-10-16 04:02:54) [GET]
+  Session ID: 994c9cea2f8bd7652715cd304d4edfc1
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.03112 (32 reqs/sec) | Rendering: 0.02920 (93%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing EditorController#index (for 64.86.141.133 at 2008-10-22 02:45:22) [GET]
+  Session ID: d4923ab3145e6144b86d33ec6bd8ceea
+  Parameters: {"action"=>"index", "controller"=>"editor"}
+Rendering template within layouts/application
+Rendering editor/index
+Completed in 0.01482 (67 reqs/sec) | Rendering: 0.01273 (85%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/editor]
+
+
+Processing TestController#index (for 64.86.141.133 at 2008-10-22 02:45:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {"action"=>"index", "controller"=>"test"}
+Rendering template within layouts/application
+Rendering test/index
+Completed in 0.02059 (48 reqs/sec) | Rendering: 0.01864 (90%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/test]
+
+
+Processing ApplicationController#index (for 64.86.141.133 at 2008-10-22 02:45:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/javascripts/tabcontent.js" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    dispatch.cgi:10
+
+Rendering /home1/rkhackco/rails_apps/adva-cms/public/404.html (404 Not Found)
+
+
+Processing TestController#index (for 64.86.141.133 at 2008-10-22 02:46:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {"action"=>"index", "controller"=>"test"}
+Rendering template within layouts/application
+Rendering test/index
+Completed in 0.02188 (45 reqs/sec) | Rendering: 0.01971 (90%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/test]
+
+
+Processing TestController#index (for 64.86.141.133 at 2008-10-22 02:51:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {"action"=>"index", "controller"=>"test"}
+Rendering template within layouts/application
+Rendering test/index
+Completed in 0.02192 (45 reqs/sec) | Rendering: 0.01971 (89%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/test]
+
+
+Processing TestController#index (for 64.86.141.133 at 2008-10-22 02:54:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {"action"=>"index", "controller"=>"test"}
+Rendering template within layouts/application
+Rendering test/index
+Completed in 0.05870 (17 reqs/sec) | Rendering: 0.05671 (96%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/test]
+
+
+Processing TestController#index (for 64.86.141.133 at 2008-10-22 02:55:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZTg2YjNkOTIwNDVhZDc2NmU5MGRjOWJjNzMyNmNh
+NDUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f2f58d718e1d1e38d99ef382da78fa9f048c3a06
+  Parameters: {"action"=>"index", "controller"=>"test"}
+Rendering template within layouts/application
+Rendering test/index
+Completed in 0.02055 (48 reqs/sec) | Rendering: 0.01866 (90%) | DB: 0.00000 (0%) | 200 OK [http://adva-cms.rkhack.com/test]
