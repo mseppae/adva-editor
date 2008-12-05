@@ -1,18 +1,25 @@
 jQuery(document).ready(function(){
-
-    jQuery(".sevent").draggable({
+   jQuery('#svgintro').svg({
+                onLoad: drawIntro
+            });
+			pool();
+			
+			sEvent();
+			eEvent();
+			
+    jQuery(".sevent").css({"cursor":"move"}).draggable({
         helper: 'clone'
     });
-    jQuery(".eevent").draggable({
+    jQuery(".eevent").css({"cursor":"move"}).draggable({
         helper: 'clone'
     });
-    jQuery(".ievent").draggable({
+    jQuery(".ievent").css({"cursor":"move"}).draggable({
         helper: 'clone'
     });
-    jQuery(".pool").draggable({
+    jQuery(".pool").css({"cursor":"move"}).draggable({
         helper: 'clone'
     });
-	 jQuery(".lane").draggable({
+	 jQuery(".lane").css({"cursor":"move"}).draggable({
         helper: 'clone'
     });
     jQuery(".canvas").droppable({
@@ -24,6 +31,8 @@ jQuery(document).ready(function(){
             jQuery('#svgintro').svg({
                 onLoad: drawIntro
             });
+			var svg = jQuery('#svgintro').svg('get');
+                           
             if (ui.draggable.hasClass('sevent')) {
                 var svg = jQuery('#svgintro').svg('get');
                 sEvent();
